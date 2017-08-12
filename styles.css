@@ -1,0 +1,115 @@
+html {
+  background: white;
+}
+body {
+  background:linear-gradient(grey, black);
+  margin: 0px;
+}
+header {
+  height:10%;
+background: white;
+border-bottom: 2px solid grey;
+}
+h1 {
+  font-size: 3em;
+  font-family: monospace;
+  margin: 30px;
+  text-align: center;
+  display: block;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: white;
+  margin-left: 10%;
+  font-size: 1em;
+}
+#searchresults {
+  width: 100px;
+  height: 140px;
+}
+#artist {
+  color: darkgrey;
+  font-style: italic;
+  font-family: sans-serif;
+}
+#searchBox {
+  background: white;
+  width:470PX;
+  height: 30px;
+  font-size: 1em;
+  //display: flex;
+  align-content: flex-end;
+  border-radius: 8px;
+  //display: block;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#submitButton {
+  border: 1px solid darkblue;
+  height: 35px;
+  width: 130px;
+  margin-top: 0px;
+  font-size: 1em;
+  border-radius: 8px;
+  //display: block;
+}
+
+.box {
+  //display: flex;
+  //flex-direction: column;
+  //flex-wrap: wrap;
+  align-content: center;
+  width: 120px;
+  height: auto;
+  //border: 1px solid red;
+  margin: 15px;
+}
+
+.container {
+  flex-wrap: wrap;
+  height: 770px;
+}
+
+#results {
+  justify-content: space-evenly;
+  margin-left: 10%;
+  width: 80%;
+  height: 550px;
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //justify-content: space-around;
+  overflow: scroll;
+}
+
+.search-form {
+  margin-left: 10%;
+  margin-top: 3%;
+}
+.search {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#music-player {
+height: 60px;
+  //position: absolute;
+  width: 700px;
+//border: 1px solid red;
+}
+p {
+  font-size: 1em;
+  margin: 0px 10px;
+  color: white;
+  font-family: sans-serif;
+}
+img {
+  margin-right: 20px;
+}
+footer {
+  align-content: flex-end;
+}
