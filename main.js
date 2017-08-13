@@ -15,7 +15,7 @@ let searchButton = document.getElementById('submitButton');
 
 let resultsBox = document.getElementById('results');
 
-let searchText = document.getElementById('searchBox')
+let searchText = document.getElementById('searchBox').value;
 
 // fetch("https://itunes.apple.com/search?")
 //   .then(function(response){
@@ -26,13 +26,13 @@ let searchText = document.getElementById('searchBox')
 //   })
 
 function goFetch(){
-fetch("https://itunes.apple.com/search?term=sublime&limit=25")
+fetch("https://itunes.apple.com/search?term=sublime")
   .then(function(response){
     return response.json();
   })
   .then(function(data) {
     console.log(data);
-    console.log(data.results[0].artistName)
+    //console.log(data.results[0].artistName)
 for(i=0; i < data.results.length; i ++){
   resultsBox.innerHTML += `<div class= "box">
   <img src="${data.results[i].artworkUrl100}" alt="Smiley face"height="90" width="90">
@@ -40,9 +40,10 @@ for(i=0; i < data.results.length; i ++){
   <p id="artist"> ${data.results[i].artistName}</p>
   </div>`
 }
-return resultsBox.innerHTML;
+
   });
 }
+searchButton.addEventListener('click', goFetch);
 goFetch();
 // .results["0"].artistName
 // .results["0"].trackName
