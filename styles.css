@@ -1,25 +1,35 @@
 html {
   background: grey;
+  display: flex;
+  justify-content: center;
+
 }
 
 body {
-  background: linear-gradient(grey, black);
-  margin: 0px;
+
+  border: 1px solid black;
+  height: 650px;
+  width: 415px;
+  background-image: url("music.png");
+  //background: linear-gradient(grey, black);
+  //margin: 0px;
 }
 
 header {
-  height: 10%;
-  background: grey;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background: black;
   border-bottom: 2px solid grey;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 1.6em;
   font-family: monospace;
-  margin: 30px;
+  //margin: 30px;
   text-align: center;
   display: block;
-  color: white;
+  color: lightgrey;
 }
 
 h2 {
@@ -30,7 +40,7 @@ h2 {
 }
 
 #searchresults {
-  width: 100px;
+  width: 50px;
   height: 140px;
 }
 
@@ -42,10 +52,9 @@ h2 {
 
 #searchBox {
   background: white;
-  width: 470PX;
-  height: 30px;
-  font-size: 1em; 
-  align-content: flex-end;
+  width: 260PX;
+  height: 15px;
+  //font-size: 1em;
   border-radius: 8px;
   text-align: center;
   margin-bottom: 30px;
@@ -53,30 +62,29 @@ h2 {
 
 #submitButton {
   border: 1px solid darkblue;
-  height: 35px;
-  width: 130px;
+  height: px;
+  width: 80px;
   margin-top: 0px;
-  font-size: 1em;
+  //font-size: 1em;
   border-radius: 8px;
 }
 
 .box {
   align-content: center;
   width: 120px;
-  height: auto;
+  height: 200px;
   margin: 15px;
 }
 
 .container {
-  flex-wrap: wrap;
-  height: 770px;
+  //height: 710px;
 }
 
 #results {
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-left: 10%;
   width: 80%;
-  height: 500px;
+  height: 410px;
   border: 1px solid lightgrey;
   display: flex;
   flex-direction: row;
@@ -85,19 +93,18 @@ h2 {
 }
 
 .search-form {
-  margin-left: 10%;
   margin-top: 3%;
 }
 
 .search {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #music-player {
   height: 60px;
-  width: 700px;
+  width: 100%;
 }
 
 p {
@@ -109,4 +116,9 @@ p {
 
 img {
   margin-right: 20px;
+}
+
+#welcome {
+  width: 50px;
+  font-size: .5em;
 }

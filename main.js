@@ -15,36 +15,53 @@ let searchButton = document.getElementById('submitButton');
 
 let resultsBox = document.getElementById('results');
 
-let searchText = document.getElementById('searchBox').value;
-
-// fetch("https://itunes.apple.com/search?")
-//   .then(function(response){
-//     return response.json();
-//   })
-//   .then(function(data) {
-//     console.log(data);
-//   })
-
+let searchText = document.getElementById('searchBox');
+//function goFetch(){
+let AudioPlay = document.getElementById('music-player');
+let play = document.getElementsByClassName('play')
+// AudioPlay.src= "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview18/v4/ff/c4/c6/ffc4c617-a555-f410-00e8-775fb3eace04/mzaf_301659123226815251.plus.aac.p.m4a"
 function goFetch(){
-fetch("https://itunes.apple.com/search?term=sublime")
+fetch(`https://itunes.apple.com/search?term=${searchText.value}`)
+
   .then(function(response){
     return response.json();
   })
+
   .then(function(data) {
+    let display = "";
     console.log(data);
-    //console.log(data.results[0].artistName)
-for(i=0; i < data.results.length; i ++){
-  resultsBox.innerHTML += `<div class= "box">
+
+for(let i=0; i < data.results.length; i ++){
+  display += `<div class= "box">
   <img src="${data.results[i].artworkUrl100}" alt="Smiley face"height="90" width="90">
-  <p> ${data.results[i].trackName}</p>
+  <P class="play"> ${data.results[i].trackName}</a>
   <p id="artist"> ${data.results[i].artistName}</p>
   </div>`
-}
+};
+resultsBox.innerHTML = display;
 
-  });
-}
-searchButton.addEventListener('click', goFetch);
-goFetch();
+});
+};
+
+ searchButton.addEventListener('click', goFetch)
+
+// document.getElementById("results").addEventListener("click",function(e) {
+// // for(let x = 0; i < data.results.length)
+//    if (e.target && e.target.innerHTML === `${data.results[x].trackName}` {
+//       //AudioPlay.src=
+//      console.log("trackName element clicked!");
+//    });
+
+
+//goFetch();
 // .results["0"].artistName
 // .results["0"].trackName
 // .results["0"].collectionName
+function findo(ev){
+  let Orig = ev.target;
+  while(Orig !== null){
+    if(Orig.tagname === "div")
+    return Orig;
+  }
+  orig = orig.parentElement;
+}
