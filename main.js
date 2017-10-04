@@ -18,7 +18,11 @@ let resultsBox = document.getElementById('results');
 let searchText = document.getElementById('searchBox');
 //function goFetch(){
 let AudioPlay = document.getElementById('music-player');
-let play = document.getElementsByClassName('play')
+let play = document.querySelector('#artist')
+let playmusic = document.getElementsByClassName('box');
+let playSample = document.querySelector('audio');
+let musicInfo = document.querySelector('.box');
+
 // AudioPlay.src= "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview18/v4/ff/c4/c6/ffc4c617-a555-f410-00e8-775fb3eace04/mzaf_301659123226815251.plus.aac.p.m4a"
 function goFetch(){
 fetch(`https://itunes.apple.com/search?term=${searchText.value}`)
@@ -32,18 +36,33 @@ fetch(`https://itunes.apple.com/search?term=${searchText.value}`)
     console.log(data);
 
 for(let i=0; i < data.results.length; i ++){
-  display += `<div class= "box">
-  <img src="${data.results[i].artworkUrl100}" alt="Smiley face"height="90" width="90">
+// let att = document.createAttribute('class')
+// att.value = 'musicInfo';
+// musicInfo.setAttribute(att);
+    const container = document.createElement('div');
+    container.innerHTML = `
+  <img   src="${data.results[i].artworkUrl100}" alt="Smiley face" height="90" width="90">
   <P class="play"> ${data.results[i].trackName}</a>
   <p id="artist"> ${data.results[i].artistName}</p>
-  </div>`
+  `;
+
+  container.addEventListener('click', playaudio);
+
+  resultsBox.appendChild(container);
+
+  function playaudio() {
+
+      playSample.src = data.results[i].previewUrl
+        playSample.autoplay = true;
+  }
 };
-resultsBox.innerHTML = display;
+// resultsBox.innerHTML = display;
 
 });
 };
 
  searchButton.addEventListener('click', goFetch)
+
 
 // document.getElementById("results").addEventListener("click",function(e) {
 // // for(let x = 0; i < data.results.length)
@@ -51,7 +70,6 @@ resultsBox.innerHTML = display;
 //       //AudioPlay.src=
 //      console.log("trackName element clicked!");
 //    });
-
 
 //goFetch();
 // .results["0"].artistName
